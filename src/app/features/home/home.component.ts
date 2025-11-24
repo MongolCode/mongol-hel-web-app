@@ -10,8 +10,8 @@ import { CourseService } from '../../services/course.service';
   template: `
     <div class="home-container">
       <div class="hero-section">
+        <img src="logo.svg" alt="Mongol App Logo" class="app-logo">
         <h1>Mongolian Learning</h1>
-        <p>Master the vertical script with interactive lessons</p>
       </div>
       
       <div class="course-grid">
@@ -43,22 +43,27 @@ import { CourseService } from '../../services/course.service';
       font-family: 'Inter', sans-serif;
     }
     .hero-section {
-      text-align: center;
-      margin-bottom: 5rem;
+      text-align: left;
+      margin-bottom: 3rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .app-logo {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 0;
+      filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
     }
     h1 {
-      font-size: 4rem;
-      margin: 0 0 1rem;
+      font-size: 2rem;
+      margin: 0;
       background: linear-gradient(135deg, #1a73e8, #8ab4f8);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       font-weight: 800;
       letter-spacing: -0.02em;
-    }
-    p {
-      font-size: 1.5rem;
-      color: #5f6368;
-      margin: 0;
     }
     .course-grid {
       display: grid;

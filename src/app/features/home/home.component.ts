@@ -11,7 +11,7 @@ import { CourseService } from '../../services/course.service';
     <div class="home-container">
       <div class="hero-section">
         <img src="logo.svg" alt="Mongol App Logo" class="app-logo">
-        <h1>Mongolian Learning</h1>
+        <h1>{{ title }}</h1>
       </div>
       
       <div class="course-grid">
@@ -141,6 +141,7 @@ import { CourseService } from '../../services/course.service';
   `]
 })
 export class HomeComponent {
+  title = 'Mongolian Learning';
   private courseService = inject(CourseService);
   courses$ = this.courseService.getCourses();
 }

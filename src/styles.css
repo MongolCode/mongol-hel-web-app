@@ -1,33 +1,105 @@
-/* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mongolian&display=swap');
+/* Global Styles & Design System */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mongolian&family=Inter:wght@400;500;600;700;800&display=swap');
 
 :root {
+  /* Color Palette - Premium Cultural */
+  --primary-color: #0066b3; /* Deep Sky Blue */
+  --primary-light: #4dabf5;
+  --primary-dark: #003c82;
+  
+  --secondary-color: #00a651; /* Grass Green */
+  --secondary-light: #5cdb82;
+  
+  --accent-color: #fdb913; /* Solar Gold */
+  --accent-hover: #ffca28;
+  
+  --bg-color: #f4f6f8; /* Soft Off-white */
+  --surface-color: #ffffff;
+  
+  --text-primary: #1a1a1a;
+  --text-secondary: #5f6368;
+  --text-on-primary: #ffffff;
+
+  /* Typography */
   --font-mongolian: 'Noto Sans Mongolian', sans-serif;
-  --primary-color: #3f51b5;
-  --accent-color: #ff4081;
-  --bg-color: #f5f5f5;
-  --text-color: #333;
+  --font-ui: 'Inter', sans-serif;
+
+  /* Spacing & Layout */
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-sm: 8px;
+  
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.08);
+  --shadow-lg: 0 16px 48px rgba(0,0,0,0.12);
+  
+  --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reset & Base */
+* {
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: var(--font-ui);
   background-color: var(--bg-color);
-  color: var(--text-color);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+/* Typography Utilities */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* Mongolian Text Utilities */
 .mongolian-text {
   font-family: var(--font-mongolian);
   writing-mode: vertical-lr;
   text-orientation: mixed;
-  font-size: 1.5rem;
   line-height: 2;
 }
 
-.vertical-container {
-  display: flex;
-  flex-direction: row;
-  overflow-x: auto;
-  height: 100%;
-  padding: 1rem;
+/* Layout Utilities */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Component Utilities */
+.card {
+  background: var(--surface-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-base);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: var(--transition-base);
 }
